@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "WebFetch(domain:zmk.dev)",
+      "WebFetch(domain:github.com)",
+      "Bash(curl -s \"https://raw.githubusercontent.com/zmkfirmware/zmk/main/.github/workflows/build-user-config.yml\")",
+      "Bash(curl -s \"https://api.github.com/repos/zmkfirmware/zmk/contents/app/boards/arm/nice_nano\")",
+      "Bash(python3 -c \"import json,sys; [print\\(f[''''name'''']\\) for f in json.load\\(sys.stdin\\)]\")",
+      "Bash(curl -s \"https://api.github.com/repos/zmkfirmware/zmk/git/trees/main?recursive=1\")",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "Bash(curl -s \"https://raw.githubusercontent.com/zmkfirmware/zmk/main/app/boards/nicekeyboards/nice_nano/nice_nano.zmk.yml\")",
+      "Bash(curl -s \"https://raw.githubusercontent.com/zmkfirmware/zmk/main/app/boards/nicekeyboards/nice_nano/board.yml\")"
+    ]
+  }
+}
