@@ -1,0 +1,9 @@
+if SHIELD_POCO39
+
+config ZMK_KEYBOARD_NAME
+    default "Poco39"
+
+config ZMK_USB_LOGGING
+    default n
+
+endif # SHIELD_POCO39

@@ -1,0 +1,9 @@
+file_format: "1"
+id: poco39
+name: Poco39
+type: shield
+url: ""
+requires:
+  - nice_nano_v2
+features:
+  - keys
