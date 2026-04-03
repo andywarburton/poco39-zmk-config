@@ -4,6 +4,6 @@ name: Poco39
 type: shield
 url: ""
 requires:
-  - nice_nano
+  - nice_nano//zmk
 features:
   - keys
