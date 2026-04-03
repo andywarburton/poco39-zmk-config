@@ -10,7 +10,22 @@
       "Bash(curl -s \"https://api.github.com/repos/zmkfirmware/zmk/git/trees/main?recursive=1\")",
       "WebFetch(domain:raw.githubusercontent.com)",
       "Bash(curl -s \"https://raw.githubusercontent.com/zmkfirmware/zmk/main/app/boards/nicekeyboards/nice_nano/nice_nano.zmk.yml\")",
-      "Bash(curl -s \"https://raw.githubusercontent.com/zmkfirmware/zmk/main/app/boards/nicekeyboards/nice_nano/board.yml\")"
+      "Bash(curl -s \"https://raw.githubusercontent.com/zmkfirmware/zmk/main/app/boards/nicekeyboards/nice_nano/board.yml\")",
+      "Bash(curl -s \"https://raw.githubusercontent.com/zmkfirmware/zmk/main/docs/docs/development/hardware-integration/lighting/underglow.md\")",
+      "Bash(curl -s https://raw.githubusercontent.com/zmkfirmware/zmk/main/docs/docs/development/hardware-integration/lighting/underglow.mdx)",
+      "Bash(curl -s \"https://raw.githubusercontent.com/zmkfirmware/zmk/main/app/boards/shields/sofle/sofle.conf\")",
+      "Bash(curl -s \"https://raw.githubusercontent.com/zmkfirmware/zmk/main/app/module/boards/nicekeyboards/nice_nano/nice_nano_2_0_0_defconfig\")",
+      "Bash(curl -s \"https://api.github.com/repos/andywarburton/zmk-config-daemonsplit/contents/config\")",
+      "Bash(curl -s \"https://api.github.com/repos/andywarburton/zmk-config-daemonsplit/git/trees/main?recursive=1\")",
+      "Bash(python3 -c \"import json,sys; [print\\(f[''''path'''']\\) for f in json.load\\(sys.stdin\\)[''''tree'''']]\")",
+      "Bash(curl -s \"https://raw.githubusercontent.com/andywarburton/zmk-config-daemonsplit/main/boards/shields/daemonsplit/daemonsplit.conf\")",
+      "Bash(curl -s \"https://raw.githubusercontent.com/andywarburton/zmk-config-daemonsplit/main/boards/shields/daemonsplit/daemonsplit.dtsi\")",
+      "Bash(curl -s \"https://raw.githubusercontent.com/andywarburton/zmk-config-daemonsplit/main/build.yaml\")",
+      "Bash(curl -s \"https://raw.githubusercontent.com/andywarburton/zmk-config-daemonsplit/main/zephyr/module.yml\")",
+      "Bash(curl -s \"https://raw.githubusercontent.com/andywarburton/zmk-config-daemonsplit/main/config/west.yml\")",
+      "Bash(curl -s \"https://raw.githubusercontent.com/zmkfirmware/zmk/main/app/module/boards/nicekeyboards/nice_nano/nice_nano.dts\")",
+      "Bash(curl -s \"https://api.github.com/repos/zmkfirmware/zmk/releases/latest\")",
+      "Bash(python3 -c \"import json,sys; r=json.load\\(sys.stdin\\); print\\(r[''''tag_name''''], r[''''published_at'''']\\)\")"
     ]
   }
 }
