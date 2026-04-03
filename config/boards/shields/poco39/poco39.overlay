@@ -5,11 +5,47 @@
 
 #include <dt-bindings/zmk/matrix_transform.h>
 #include <physical_layouts.dtsi>
+#include <dt-bindings/led/led.h>
+
+&pinctrl {
+    spi3_default: spi3_default {
+        group1 {
+            psels = <NRF_PSEL(SPIM_MOSI, 0, 6)>; /* D1 = P0.06 */
+        };
+    };
+    spi3_sleep: spi3_sleep {
+        group1 {
+            psels = <NRF_PSEL(SPIM_MOSI, 0, 6)>;
+            low-power-enable;
+        };
+    };
+};
+
+&spi3 {
+    compatible = "nordic,nrf-spim";
+    status = "okay";
+    pinctrl-0 = <&spi3_default>;
+    pinctrl-1 = <&spi3_sleep>;
+    pinctrl-names = "default", "sleep";
+
+    led_strip: ws2812@0 {
+        compatible = "worldsemi,ws2812-spi";
+        reg = <0>;
+        spi-max-frequency = <4000000>;
+        chain-length = <14>;
+        spi-one-frame = <0x70>;
+        spi-zero-frame = <0x40>;
+        color-mapping = <LED_COLOR_ID_GREEN
+                         LED_COLOR_ID_RED
+                         LED_COLOR_ID_BLUE>;
+    };
+};
 
 / {
     chosen {
         zmk,kscan = &kscan0;
         zmk,physical-layout = &physical_layout0;
+        zmk,underglow = &led_strip;
     };
 
     default_transform: keymap_transform_0 {
@@ -97,11 +133,11 @@
         diode-direction = "col2row";
 
         col-gpios
-            = <&pro_micro 20 GPIO_ACTIVE_HIGH>  /* col 0 — D20 */
-            , <&pro_micro 19 GPIO_ACTIVE_HIGH>  /* col 1 — D19 */
-            , <&pro_micro 18 GPIO_ACTIVE_HIGH>  /* col 2 — D18 */
-            , <&pro_micro 15 GPIO_ACTIVE_HIGH>  /* col 3 — D15 */
-            , <&pro_micro 14 GPIO_ACTIVE_HIGH>  /* col 4 — D14 */
+            = <&pro_micro 14 GPIO_ACTIVE_HIGH>  /* col 0 — D14 */
+            , <&pro_micro 15 GPIO_ACTIVE_HIGH>  /* col 1 — D15 */
+            , <&pro_micro 19 GPIO_ACTIVE_HIGH>  /* col 2 — D19 */
+            , <&pro_micro 20 GPIO_ACTIVE_HIGH>  /* col 3 — D20 */
+            , <&pro_micro 21 GPIO_ACTIVE_HIGH>  /* col 4 — D21 */
             , <&pro_micro  9 GPIO_ACTIVE_HIGH>  /* col 5 — D9  */
             , <&pro_micro  4 GPIO_ACTIVE_HIGH>  /* col 6 — D4  */
             , <&pro_micro  5 GPIO_ACTIVE_HIGH>  /* col 7 — D5  */
@@ -112,8 +148,8 @@
         row-gpios
             = <&pro_micro  3 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  /* row 0 — D3  */
             , <&pro_micro  8 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  /* row 1 — D8  */
-            , <&pro_micro 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  /* row 2 — D10 */
-            , <&pro_micro 16 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  /* row 3 — D16 */
+            , <&pro_micro 16 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  /* row 2 — D16 */
+            , <&pro_micro 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  /* row 3 — D10 */
             ;
     };
 };
