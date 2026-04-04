@@ -112,7 +112,7 @@
             = <&pro_micro  3 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  /* row 0 — D3  */
             , <&pro_micro  8 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  /* row 1 — D8  */
             , <&pro_micro 16 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  /* row 2 — D16 */
-            , <&pro_micro  0 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  /* row 3 — D0  */
+            , <&pro_micro  2 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  /* row 3 — D2  */
             ;
     };
 };
