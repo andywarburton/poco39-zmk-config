@@ -63,7 +63,7 @@
 
         bt_media_layer {
             // ┌─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┐
-            // │ ESC │UNLK │     │     │     │     │     │RGTG │HUE+ │BRT+ │
+            // │ ESC │UNLK │BOOT │RST  │     │     │     │RGTG │HUE+ │BRT+ │
             // ├─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤
             // │ TAB │     │     │     │     │     │     │EFF+ │HUE- │BRT- │
             // ├─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤
@@ -72,7 +72,7 @@
             // │VOL- │ PP  │VOL+ │     │     │     │     │     │     │
             // └─────┴─────┴─────┴─────┴─────┴─────┴─────┴─────┴─────┘
             bindings = <
-                &kp ESC      &studio_unlock &trans       &trans  &trans  &trans  &trans  &rgb_ug RGB_TOG  &rgb_ug RGB_HUI  &rgb_ug RGB_BRI
+                &kp ESC      &studio_unlock &bootloader  &sys_reset  &trans  &trans  &trans  &rgb_ug RGB_TOG  &rgb_ug RGB_HUI  &rgb_ug RGB_BRI
                 &kp TAB      &trans         &trans       &trans  &trans  &trans  &trans  &rgb_ug RGB_EFF  &rgb_ug RGB_HUD  &rgb_ug RGB_BRD
                 &bt BT_SEL 0 &bt BT_SEL 1   &bt BT_SEL 2 &trans  &trans  &trans  &trans  &trans           &trans           &trans
                 &kp C_VOL_DN &kp C_PP       &kp C_VOL_UP &trans  &trans  &trans          &trans           &trans  &trans
